@@ -1,0 +1,46 @@
+package code;
+
+import java.util.Scanner;
+
+class Solution {
+
+    public int removeElement(int[] nums, int val) {
+
+        int k = 0;  // position to place valid elements
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (nums[i] != val) {
+                nums[k] = nums[i];  // keep element
+                k++;                // move forward
+            }
+        }
+
+        return k;   // number of elements left
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();   // size of array
+        int[] nums = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            nums[i] = sc.nextInt();   // input array
+        }
+
+        int val = sc.nextInt();   // value to remove
+
+        Solution obj = new Solution();
+
+        int k = obj.removeElement(nums, val);
+
+        System.out.println("Number of elements after removal: " + k);
+
+        System.out.print("Updated array: ");
+        for (int i = 0; i < k; i++) {
+            System.out.print(nums[i] + " ");
+        }
+    }
+}
