@@ -1,0 +1,51 @@
+package LINKED_List;
+
+public class node {
+    int val;
+    node next;
+
+    node(int val) {
+        this.val = val;
+    }
+}
+
+class LList {
+    node head;
+
+    void addAthead(int val) {
+
+        node temp = new node(val);
+
+        temp.next = head;
+
+        head = temp;
+    }
+
+    void llDisplay() {
+
+        node temp = head;
+
+        while (temp != null) {
+
+            System.out.println(temp.val);
+
+            temp = temp.next;
+
+        }
+    }
+}
+
+class linkedList {
+
+    public static void main(String[] args) {
+
+        LList ll = new LList();
+
+        ll.addAthead(10);
+        ll.addAthead(20);
+        ll.addAthead(30);
+        ll.addAthead(40);
+
+        ll.llDisplay();
+    }
+}
